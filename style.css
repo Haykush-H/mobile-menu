@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-icon.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #a8a8a8;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 10px;
+    }
+
+    .menu.active li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
